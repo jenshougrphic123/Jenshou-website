@@ -53,5 +53,5 @@ index.html   — halaman utama
   Website ini masih berada dalam tahap pengujian.<br>
   Beberapa elemen, tampilan, atau fitur mungkin belum stabil.
 </p>
-<a href="https://link-web-kamu.com">https://link-web-kamu.com</a>
+<a href="https://jenshouuu.netlify.app/">https://link-web-kamu.com</a>
 
