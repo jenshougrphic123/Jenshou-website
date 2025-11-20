@@ -1,0 +1,854 @@
+/* ===========================
+   COMMISSION PAGE - HERO (FINAL FIX)
+   =========================== */
+
+.commission-page {
+  padding: 48px 24px 96px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Hero big card */
+.commission-hero .hero-card {
+  position: relative;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 36px;
+  min-height: 500px;
+  height: auto; 
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px) saturate(120%);
+  -webkit-backdrop-filter: blur(8px) saturate(120%);
+  box-shadow: 0 10px 30px rgba(13, 13, 20, 0.08);
+  overflow: visible;
+  z-index: 1;
+}
+
+/* Left content */
+.hero-content {
+  flex: 1;
+  min-width: 260px;
+  max-width: 640px;
+}
+
+.hero-title {
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 44px;
+  line-height: 0.9;
+  margin: 0 0 12px;
+  color: #f0f0f0;
+}
+
+.hero-title span {
+  display: inline-block;
+}
+
+.hero-time {
+  margin: 0 0 20px;
+  font-size: 14px;
+  color: white;
+  font-weight: 600;
+}
+
+/* CTA buttons */
+.hero-cta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Buttons base */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 14px;
+  min-height: 40px;
+  cursor: pointer;
+
+  /* Smooth interaction */
+  transition: 
+    transform 0.22s cubic-bezier(.22, 1, .36, 1),
+    box-shadow 0.22s cubic-bezier(.22, 1, .36, 1),
+    filter 0.22s ease;
+    
+  box-shadow: 0 6px 14px rgba(10, 10, 18, 0.06);
+}
+
+/* Primary */
+.btn-primary {
+  background: linear-gradient(90deg, #6b8cff, #a66bf2);
+  color: #fff;
+}
+
+/* Outline */
+.btn-outline {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  color: #222;
+}
+
+/* Hover effect */
+.btn:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 18px 32px rgba(10, 10, 18, 0.10);
+  filter: brightness(1.04);
+}
+
+/* Press / click effect */
+.btn:active {
+  transform: translateY(-1px) scale(0.98);
+  box-shadow: 0 8px 20px rgba(10, 10, 18, 0.08);
+  filter: brightness(0.97);
+}
+
+/* Right illustration */
+.hero-illustration {
+  flex: 0 0 380px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+/* Gambar karakter keluar bagian atas tapi kaki tetap di dalam */
+.hero-illustration img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-55%, 445px);
+  width: 600px;
+  height: auto;
+  max-width: none;
+  object-fit: contain;
+  user-select: none;
+  z-index: 5;
+}
+
+/* Efek overlay lembut di atas card */
+.commission-hero .hero-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  opacity: 0.08;
+  background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(200, 180, 255, 0.02)
+  );
+}
+
+/* ===========================
+   RESPONSIVE SECTION
+   =========================== */
+
+@media (max-width: 880px) {
+  .commission-page {
+    padding: 28px 16px 64px;
+  }
+
+  .commission-hero .hero-card {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: left;
+    padding: 22px;
+    gap: 18px;
+    height: auto;
+    overflow: hidden; /* di mobile biar gak aneh */
+  }
+
+  .hero-content {
+    order: 1;
+    max-width: 100%;
+  }
+
+  .hero-illustration {
+    order: 2;
+    width: 500px;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .hero-illustration img {
+    position: relative;
+    justify-content: center;
+    width: 500px;
+    max-width: 500px;
+    transform: translate(-60%, 30%);
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-title {
+    font-size: 26px;
+  }
+
+  .hero-illustration img {
+    max-width: 320px;
+    transform: translateY(-3%);
+  }
+}
+
+/* ===========================
+   COMMISSION SERVICE SECTION
+   =========================== */
+.commission-service {
+  position: relative;
+  padding: 100px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 64px;
+  flex-wrap: nowrap;
+}
+
+/* Gambar kiri */
+.service-image {
+  flex: 0 0 460px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.service-image img {
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  object-fit: contain;
+  user-select: none;
+  transform: translateY(-20px);
+}
+
+/* Konten kanan */
+.service-content {
+  flex: 1;
+  max-width: 620px;
+}
+
+.service-title {
+  font-weight: 800;
+  font-size: 40px;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.service-title span {
+  color: #fff;
+  background: linear-gradient(90deg, #6b8cff, #a66bf2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.service-desc {
+  font-size: 16px;
+  font-weight: 300;
+  color: #f0f0f0;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+/* Card list */
+.service-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.service-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 18px 22px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px) saturate(120%);
+  -webkit-backdrop-filter: blur(8px) saturate(120%);
+  box-shadow: 0 10px 24px rgba(13, 13, 20, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(13, 13, 20, 0.12);
+}
+
+.service-item i {
+  font-size: 28px;
+  color: #7a70f2;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.service-text h3 {
+  font-size: 18px;
+  color: #fff;
+  background: linear-gradient(90deg, #6b8cff, #a66bf2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 4px;
+}
+
+.service-text p {
+  font-size: 14px;
+  color: #fff;
+  line-height: 1.5;
+}
+
+/* ===========================
+   RESPONSIVE DESIGN
+   =========================== */
+@media (max-width: 960px) {
+  .service-inner {
+    flex-direction: column;
+    gap: 48px;
+    text-align: center;
+  }
+
+  .service-image {
+    flex: none;
+    width: 100%;
+    order: 1;
+  }
+
+  .service-image img {
+    max-width: 360px;
+    transform: translateY(0);
+  }
+
+  .service-content {
+    order: 2;
+    max-width: 100%;
+  }
+
+  .service-title {
+    font-size: 32px;
+  }
+
+  .service-list {
+    align-items: center;
+  }
+
+  .service-item {
+    max-width: 480px;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-title {
+    font-size: 26px;
+  }
+
+  .service-desc {
+    font-size: 14px;
+  }
+
+  .service-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .service-item i {
+    margin-bottom: 6px;
+  }
+}
+
+/* ===========================
+   CHOOSE PLAN SECTION STYLE
+=========================== */
+.choose-plan {
+  width: 100%;
+  padding: 100px 20px;
+  display: flex;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+}
+
+.plan-container {
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.plan-title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.plan-subtitle {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 60px;
+}
+
+.plan-cards {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.plan-card {
+  flex: 1 1 300px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px 30px;
+  color: #fff;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.plan-card.basic {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.2));
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+}
+
+.plan-card.basic:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+}
+
+.plan-card.highlight {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(255, 175, 0, 0.2));
+  border: 1px solid rgba(255, 215, 0, 0.6);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+}
+
+.plan-card.highlight:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 215, 0, 0.6);
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+}
+
+.plan-card.prem {
+  background: linear-gradient(135deg, rgba(164, 109, 233, 0.3), rgba(100, 150, 255, 0.2));
+  border: 1px solid rgba(164, 109, 233, 0.6);
+  box-shadow: 0 0 25px rgba(164, 109, 233, 0.3)
+}
+
+.plan-card.prem:hover {
+  transform: translateY(-10px);
+  background: rgba(164, 109, 233, 0.5);
+  box-shadow: 0 0 30px rgba(164, 109, 233, 0.8);
+}
+
+.plan-price {
+  font-size: 2rem;
+  margin: 15px 0 25px;
+}
+
+.plan-price span {
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+.plan-card ul {
+  list-style: none;
+  text-align: left;
+  padding: 0;
+  margin: 0 0 30px;
+}
+
+.plan-card li {
+  margin: 8px 0;
+  opacity: 0.9;
+}
+
+.plan-btn {
+  background: linear-gradient(135deg, #a46de9, #6496ff);
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.plan-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(164, 109, 233, 0.5);
+}
+
+/* ===========================
+   RESPONSIVE DESIGN
+=========================== */
+@media (max-width: 900px) {
+  .plan-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .plan-card {
+    width: 90%;
+    max-width: 400px;
+  }
+}
+
+/* ===========================
+   WORKFLOW SECTION
+   =========================== */
+.workflow-section {
+  padding: 100px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.workflow-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.workflow-title {
+  font-size: 42px;
+  font-weight: 800;
+  color: #6b8cff;
+  background: linear-gradient(90deg, #6b8cff, #a66bf2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;;
+  margin-bottom: 10px;
+}
+
+.workflow-subtitle {
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 60px;
+}
+
+.workflow-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.workflow-card {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px) saturate(130%);
+  -webkit-backdrop-filter: blur(10px) saturate(130%);
+  border-radius: 18px;
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(13,13,20,0.08);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.workflow-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(13,13,20,0.1);
+}
+
+.step-number {
+  font-size: 44px;
+  font-weight: 900;
+  background: linear-gradient(90deg, #6b8cff, #a66bf2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+
+.step-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.step-desc {
+  font-size: 14px;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .workflow-steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .workflow-steps {
+    grid-template-columns: 1fr;
+  }
+  .workflow-title {
+    font-size: 32px;
+  }
+  .workflow-subtitle {
+    font-size: 14px;
+  }
+  .workflow-card {
+    padding: 28px 20px;
+  }
+}
+
+/* ===========================
+   STATS / ACHIEVEMENT SECTION
+   =========================== */
+.commission-stats {
+  width: 100%;
+  padding: 100px 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 20px;
+  transition: all 0.25s ease;
+  text-align: center;
+  cursor: default;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.stat-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .stat-card {
+    padding: 28px 18px;
+  }
+
+  .stat-card h3 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .stats-container {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .stat-card {
+    padding: 24px 16px;
+  }
+
+  .stat-card h3 {
+    font-size: 15px;
+  }
+}
+
+/* ===========================
+   SCROLL TO TOP BUTTON
+   =========================== */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6b8cff, #a66bf2);
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+#scrollTopBtn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(135deg, #7d96ff, #b67ff4);
+}
+
+/* tampil ketika scroll turun */
+#scrollTopBtn.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Responsif */
+@media (max-width: 600px) {
+  #scrollTopBtn {
+    width: 42px;
+    height: 42px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 20px;
+  }
+}
+
+/* ===========================
+   GLOBAL ANIMATION SETUP
+   =========================== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  animation: fadeInBody 1.2s ease forwards;
+
+@keyframes fadeInBody {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+}
+
+/* Scroll reveal animation */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(.25,.8,.25,1);
+}
+
+[data-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===========================
+   SCROLL TO TOP BUTTON
+   =========================== */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 100;
+  background: linear-gradient(135deg, #a66bf2, #6b8cff);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 22px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  transition: all .3s ease;
+  display: none;
+}
+#scrollTopBtn:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+}
+
+/* ===========================
+   PARALLAX EFFECT
+   =========================== */
+.parallax {
+  transition: transform 0.5s ease-out;
+  will-change: transform;
+}
+
+/* ===========================
+   RESPONSIVE TWEAKS
+   =========================== */
+@media (max-width: 768px) {
+  #scrollTopBtn {
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+/* === PAGE LOAD === */
+body {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+body.page-loaded {
+  opacity: 1;
+}
+
+/* === SCROLL REVEAL === */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.fade-up.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === PARALLAX IMAGE === */
+.hero-illustration img {
+  transition: transform 0.4s ease-out;
+  will-change: transform;
+}

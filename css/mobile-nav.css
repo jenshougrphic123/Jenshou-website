@@ -1,0 +1,127 @@
+/* mobile-nav.css
+   Bottom navigation (mobile only) for Jenshou project
+   - Active only at <=768px
+   - Adds safe bottom padding so content won't be overlapped
+   - Glass look, matches existing gradients & backdrop usage
+*/
+
+:root {
+  --bn-height: 68px; /* height of nav container */
+  --bn-gap: 12px;
+}
+
+/* Mobile-only */
+@media (max-width: 768px) {
+
+  /* ensure existing fixed elements keep expected stacking order */
+  .bottom-nav {
+    --h: var(--bn-height);
+    position: fixed;
+    bottom: var(--bn-gap);
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    max-width: 860px;
+    height: var(--h);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    gap: 6px;
+    z-index: 1700; /* higher than most page elements but lower than overlays */
+    border-radius: 14px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.06));
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 10px 30px rgba(6,6,6,0.22);
+    transition: transform 0.28s cubic-bezier(.2,.9,.3,1), opacity 0.28s ease;
+    pointer-events: auto;
+  }
+
+  /* spacing to avoid overlap with page content */
+  /* keep this narrow and targeted to avoid global side-effects */
+  .page-wrap {
+    padding-bottom: calc(var(--bn-height) + 48px); /* safe area */
+  }
+  .content-col {
+    padding-bottom: calc(var(--bn-height) + 24px);
+  }
+  .right-insight {
+    padding-bottom: calc(var(--bn-height) + 20px);
+  }
+
+  /* nav item */
+  .bottom-nav__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    flex: 1 1 auto;
+    text-decoration: none;
+    color: #eaeef8;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    transition: transform 0.22s ease, color 0.22s ease;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .bottom-nav__item i {
+    font-size: 1.26rem;
+    display: inline-block;
+    margin-bottom: 4px;
+    /* gradient icon text look similar to nav-right .brand */
+    background: linear-gradient(90deg, #a46de9, #6496ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: transform 0.22s ease, filter 0.22s ease;
+  }
+
+  .bottom-nav__item span {
+    display: block;
+    font-size: 0.62rem;
+    opacity: 0.95;
+    color: rgba(230,235,255,0.9);
+  }
+
+  /* Active style */
+  .bottom-nav__item.active {
+    color: #ffffff;
+    transform: translateY(-4px);
+  }
+  .bottom-nav__item.active i {
+    transform: scale(1.18);
+    filter: drop-shadow(0 6px 14px rgba(100,150,255,0.12));
+    -webkit-text-stroke: 0px rgba(255,255,255,0.02);
+  }
+
+  /* subtle hover/tap feedback */
+  .bottom-nav__item:active { transform: translateY(-2px) scale(0.997); }
+
+  /* small divider between items (visual breathing room) */
+  .bottom-nav__sep {
+    width: 1px;
+    height: 44%;
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+    border-radius: 2px;
+    margin: 0 6px;
+  }
+
+  /* hide desktop navbar's inner elements so bottom nav doesn't fight z-index */
+  .navbar { z-index: 900; } /* keep navbar behind bottom nav on mobile */
+
+  /* when device has safe-area-inset (iPhone notch), add a bit more bottom */
+  @supports (padding: max(0px)) {
+    .page-wrap { padding-bottom: calc(var(--bn-height) + env(safe-area-inset-bottom) + 40px); }
+    .content-col { padding-bottom: calc(var(--bn-height) + env(safe-area-inset-bottom) + 16px); }
+  }
+}
+
+/* Ensure bottom nav is hidden on desktop (so no conflicts) */
+@media (min-width: 769px) {
+  .bottom-nav { display: none !important; }
+}

@@ -1,0 +1,941 @@
+/* SOCIAL COLUMN (fixed kiri, vertikal center) */
+.social-col {
+  position: fixed;
+  left: 20px;
+  top: 120px;
+  bottom: 20px;
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 0;
+  z-index: 1250;
+  pointer-events: auto;
+}
+
+/* judul kecil di atas sidebar (opsional) */
+.social-title {
+  font-weight: 600;
+  color: #fff;
+  text-align:center;
+  font-size: .7rem;
+  margin-bottom: 8px;
+}
+
+/* list icon center vertical */
+.social-list {
+  display:flex;
+  flex-direction: column;
+  gap: 22px;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 auto;
+}
+
+/* tombol sosmed bulat */
+.sbtn {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.18);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  transition: transform .18s ease, background .18s;
+}
+.sbtn img { width: 28px; height: 28px; display:block; }
+.sbtn:hover { transform: scale(1.06); background: rgba(255,255,255,0.22); }
+
+.social-toggle {
+  display: none; /* default desktop */
+}
+
+/* === KEYFRAMES GLOBAL === */
+@keyframes slideIn {
+  0% { transform: translateX(-120%) scale(0.9); opacity: 0; }
+  60% { transform: translateX(10%) scale(1.05); opacity: 1; }
+  100% { transform: translateX(0) scale(1); }
+}
+
+@keyframes slideOut {
+  0% { transform: translateX(0) scale(1); opacity: 1; }
+  100% { transform: translateX(-120%) scale(0.9); opacity: 0; }
+}
+
+/* RESPONSIVE: untuk layar kecil / mobile */
+@media (max-width: 768px) {
+.social-col {
+    width: 80px;
+    flex-direction: column;
+    left: 0;
+    top: 80px;
+    bottom: auto;
+    gap: 16px;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+    z-index: 1250;
+    pointer-events: auto;
+    transform: translateX(-100%) scale(0.8);
+    opacity: 0;
+  }
+
+  .social-col.active {
+    transform: translateX(0) scale(1);
+    animation-name: slideIn;
+    opacity: 1;
+  }
+  
+    .social-col:not(.active) {
+    animation-name: slideOut;
+  }
+  
+    /* Sembunyikan menu desktop */
+  .nav-menu {
+    display: none;
+  }
+  /* Tampilkan hamburger */
+  .hamburger-btn {
+    display: flex;
+  }
+
+  .social-list {
+    flex-direction: column; /* tetap vertical */
+    gap: 18px;
+  }
+
+.social-toggle {
+  position: fixed;
+  left: 0;
+  top: 80px;
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, rgba(164,109,233,0.35), rgba(100,170,255,0.35));
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.social-toggle:hover {
+  transform: scale(1.08) rotate(8deg);
+  background: linear-gradient(135deg, rgba(164,109,233,0.55), rgba(100,170,255,0.55));
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15), 0 0 12px rgba(164,109,233,0.3);
+}
+  
+  .social-toggle.active {
+  transform: rotate(90deg); /* panah muter saat container muncul */
+  transform: translateX(100px) rotate(180deg); /* geser sesuai lebar sidebar */
+  transition: transform 0.3s ease;
+ }
+  
+}
+/* ===========================
+   CONTENT COLUMN (RIGHT, SCROLLABLE)
+   =========================== */
+.content-col {
+  width: 100%;
+  max-width: 1200px;
+  overflow-y: auto;
+  padding: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* event label */
+.event-label {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-weight:700;
+  font-size: 1.1rem;
+  color: #333;
+  z-index: 6;
+}
+
+/* scrollbar styling (optional subtle) */
+.content-col::-webkit-scrollbar { width: 8px; }
+.content-col::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.18); border-radius: 6px; }
+.content-col::-webkit-scrollbar-track { background: transparent; }
+
+/* ===========================
+   POSTER AREA (MAIN + SIDEBAR SMALL)
+   =========================== */
+.poster-area {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* main left poster container */
+.poster-left {
+  flex: 3 1 520px;
+  max-width: 600px;
+  min-width: 280px;
+}
+
+/* poster-right small column */
+.poster-right {
+  flex: 2 1 260px;
+  display:flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 180px;
+  margin-left: 10px;
+}
+
+/* ===========================
+   MAIN CAROUSEL
+   =========================== */
+.carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 14px;
+  background: rgba(0,0,0,0.02);
+}
+
+.carousel-track {
+  display:flex;
+  transition: transform 0.6s cubic-bezier(.22,.9,.28,1);
+  will-change: transform;
+}
+
+/* each slide fixed to container width so JS can translate by pixels reliably */
+.slide {
+  flex: 0 0 100%;
+  display: block;
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  aspect-ratio: 4 / 5; /* keep 4:5 ratio */
+  min-height: 220px;    /* ensure visible on very small screens */
+}
+
+.slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .35s ease;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.slide:hover img { transform: scale(1.03); }
+
+/* overlay info */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent 45%);
+  color: #fff;
+  padding: 40px 25px 25px;
+  display:flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .32s ease, transform .32s ease;
+}
+.slide:hover .overlay { opacity: 1; transform: translateY(0); }
+
+.overlay-left { display:flex; flex-direction: column; gap: 8px; }
+.overlay-left .collab { font-weight:600; font-size: .95rem; }
+.overlay-left .deadline { font-size:.85rem; opacity:.9; }
+.overlay-left .join {
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.22);
+  padding: 8px 16px;
+  border-radius: 28px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.overlay-left .join:hover {
+  background: white;
+  color: black;
+  border-color: rgba(255,255,255,0.4);
+  transform: scale(1.05);
+}
+
+.overlay-right { text-align:right; font-size:.9rem; opacity:.95; }
+
+/* dots */
+.dots { display:flex; gap:10px; justify-content:center; margin-top:12px; }
+.dot {
+  width:12px; height:12px; border-radius:50%;
+  background: rgba(255,255,255,0.6); border:1px solid rgba(255,255,255,0.72);
+  transition: transform .2s, background .2s;
+  cursor:pointer;
+}
+.dot.active { background:#fff; transform: scale(1.06); }
+
+/* === SMALL POSTER RIGHT SIDE === */
+.small-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: flex-start;
+}
+
+.event-title-right {
+  position: absolute;
+  top: 12px;      /* pojok kiri atas */
+  left: 12px;
+  margin: 0;
+  padding: 4px 8px;       /* beri jarak dalam kotak */
+  background-color: rgba(0, 0, 0, 0.6); /* kotak hitam transparan */
+  color: white;
+  font-size: 1rem;       /* bisa disesuaikan */
+  font-weight: 600;
+  border-radius: 6px;
+  pointer-events: none;   /* agar tidak mengganggu hover */
+  z-index: 5;             /* di atas gambar tapi di bawah hover overlay */
+}
+
+.small-card {
+  position: relative;
+  width: 250px; /* lebih besar dari sebelumnya */
+  aspect-ratio: 4 / 5;
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+.small-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Efek hover */
+.small-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* Overlay gradasi */
+.small-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.small-card:hover::after {
+  opacity: 1;
+}
+
+/* Info teks saat hover */
+.small-info {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  color: #ffffff;
+  opacity: 0;
+  transform: translateY(10px);
+  z-index: 5;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.small-card:hover .small-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.small-info h4 {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.small-info span {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.small-info span a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.small-info span a:hover {
+  color: #ffffff; /* misalnya putih saat hover */
+  text-decoration: underline;
+}
+
+/* ===========================
+   PROGRESS CARD
+   =========================== */
+.progress-card {
+  padding: 12px;
+  text-align:center;
+  margin-top: 8px; /* small gap from small posters above */
+  background: rgba(255,255,255,0.03);
+  color: white;
+  border-radius: 12px;
+}
+.progress-track {
+  width: 100%;
+  height: 12px;
+  background: rgba(255,255,255,0.18);
+  border-radius: 999px;
+  overflow:hidden;
+  margin-top: 10px;
+}
+.progress-bar {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #7ed6df, #e056fd);
+  border-radius: 999px;
+  transition: width .9s cubic-bezier(.2,.9,.25,1);
+}
+.progress-percent { margin-top:10px; font-weight:600; font-size:.95rem; }
+
+/* ===== EVENT AVAILABLE FLOATING TITLE ===== */
+.event-title {
+  position: absolute;
+  top: 20px; 
+  left: 20px;
+  z-index: 3;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.25);
+  padding: 6px 14px;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.2);
+  pointer-events: none; /* biar gak ganggu klik di poster */
+}
+
+/* ==========================================================================
+   ENTRANCE + GLOBAL SMOOTHING (APPEND - do not remove existing css)
+   ========================================================================== */
+
+/* safe easing var */
+:root {
+  --enter-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --enter-duration: 520ms;
+  --stagger-gap: 120ms;
+}
+
+/* Reduced motion respect */
+@media (prefers-reduced-motion: reduce) {
+  .enter {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Keyframe for fade-up entrance */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.995);
+    filter: blur(2px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-2px) scale(1.002);
+    filter: blur(0.2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: none;
+  }
+}
+
+/* utility class applied by JS for elements that will animate in */
+.enter {
+  opacity: 0; /* start hidden until animation runs */
+  transform-origin: center;
+  will-change: transform, opacity, filter;
+  animation-name: fadeUp;
+  animation-duration: var(--enter-duration);
+  animation-timing-function: var(--enter-ease);
+  animation-fill-mode: both;
+  animation-delay: var(--stagger, 0ms);
+}
+
+/* additional subtle global smoothing for hover/transition feels */
+.nav-link,
+.overlay-left .join,
+.sbtn,
+.small-card,
+.slide img,
+.progress-card,
+.event-title,
+.brand,
+.dots,
+.dot {
+  transition: all 220ms var(--enter-ease);
+}
+
+/* ensure overlay pointer events fix remains (keeps join interactive) */
+.overlay { pointer-events: none; }
+.overlay .join { pointer-events: all; position: relative; z-index: 5; }
+
+/* Optional micro motion on page load for glossier background */
+.glossy-bg {
+  transition: filter 900ms var(--enter-ease), opacity 900ms var(--enter-ease);
+}
+
+/* Make sure elements that should be visible always (e.g. .content-col) are visible
+   immediately if JS not present. This avoids layout invisibility without JS. */
+.no-js .enter {
+  opacity: 1;
+  transform: none;
+  animation: none;
+}
+
+/* fine-tune: slightly stagger secondary items quicker */
+.small-card.enter { transform-origin: center bottom; }
+
+/* small reduction for very small screens to keep animation subtle */
+@media (max-width: 640px) {
+  :root { --stagger-gap: 80ms; --enter-duration: 420ms; }
+}
+
+/* ===== Right Insight Container ===== */
+.right-insight {
+  position: relative;
+  width: 270px;
+  min-height: 500px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.05);
+  padding: 25px 20px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  animation: fadeInRight 1s ease forwards;
+}
+
+/* Animasi masuk dari kanan */
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+    filter: blur(5px);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}
+
+.insight-section h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: white;
+}
+
+.insight-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.insight-list li {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.insight-section p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 6px 0;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.skill-tags span {
+  position: relative;
+  display: inline-block;
+  padding: 4px 8px;
+  margin: 2px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden; /* penting supaya gradasi tidak keluar */
+  background-color: rgba(255, 255, 255, 0.9); /* dasar transparan */
+}
+
+.skill-tags span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0),
+      rgba(100, 150, 255, 0.6),
+      rgba(164, 109, 233, 0.6)
+    );
+  z-index: 0;
+  transition: height 0.4s ease;
+  border-radius: inherit;
+}
+
+.skill-tags span:hover::after {
+  height: 100%;
+}
+
+.skill-tags span p, .skill-tags span {
+  position: relative;
+  z-index: 1;
+}
+
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Right insight sections animasi masuk */
+.right-insight .insight-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+/* ===== Sub Container Putih di Dalam ===== */
+.insight-card {
+  position: relative; /* penting supaya ::before bisa diposisikan */
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 14px;
+  padding: 12px 14px;
+  margin-top: 6px;
+  color: #111;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  overflow: hidden; /* supaya efek gradasi tidak keluar */
+  transition: all 0.3s ease;
+}
+
+/* Efek shiny */
+.insight-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0.0) 0%,
+    rgba(255,255,255,0.2) 50%,
+    rgba(255,255,255,0.0) 100%
+  );
+  transform: rotate(25deg) translateX(-100%);
+  pointer-events: none;
+  transition: transform 0.7s ease;
+}
+
+/* Trigger hover */
+.insight-card:hover::before {
+  transform: rotate(25deg) translateX(100%);
+}
+
+.insight-card:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Teks di dalam insight-card */
+.insight-card p,
+.insight-card li {
+  color: #222;
+}
+
+.insight-card strong {
+  color: #000;
+}
+
+.skill-tags span {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #222;
+  transition: all 0.3s ease;
+}
+
+.skill-tags span:hover {
+  background: rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+
+/* Default (desktop) tetap seperti biasa */
+.main-container {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* --------------------------
+   Mobile final fix: ensure right-insight sits BELOW poster
+   -------------------------- */
+@media (max-width: 768px) {
+  /* Pastikan layout kolom berubah jadi kolom (vertical) */
+  .page-wrap {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;           /* spacing antar section */
+    margin-left: 0;      /* lepas ruang sidebar */
+    padding-top: 100px;  /* sesuaikan jika navbar fixed */
+  }
+
+  /* Sosmed tetap fixed (atau atur sesuai keinginan) */
+  .social-col {
+    position: fixed; /* keep as-is */
+    left: 12px;
+    top: 80px;
+    z-index: 30;
+  }
+
+  /* Konten utama (poster + semua isi) tampil dulu */
+  .content-col {
+    order: 1 !important;
+    width: 100% !important;
+    max-height: none !important;
+    overflow: visible !important; /* biar anak tidak terpotong */
+    padding-bottom: 16px;
+  }
+
+  /* Pastikan poster-area punya ruang bawah yang cukup */
+  .poster-area {
+    margin-bottom: 10px;
+  }
+
+  /* Right insight pindah di bawah poster (tegas) */
+  .right-insight {
+    order: 2 !important;              /* pastikan posisinya setelah .content-col */
+    position: relative !important;    /* jangan absolute pada mobile */
+    width: 100% !important;
+    margin: 18px 0 0 0 !important;    /* beri jarak supaya tidak nempel */
+    z-index: 20 !important;
+    opacity: 1 !important;            /* override animasi yang sembunyikan */
+    transform: none !important;       /* batalkan translate/translateY */
+    pointer-events: auto !important;
+    display: block !important;
+  }
+
+  /* Jika ada enter/animation yang masih bikin invisible, force visible */
+  .right-insight .insight-section {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Jika masih ada aturan order di elemen lain, pastikan poster-left muncul dulu */
+  .poster-left { order: 1 !important; }
+
+  /* Jaga agar progress-card tidak tertimpa/terpotong */
+  .progress-card { margin-top: 12px !important; }
+
+  /* jika ada .main-container / .content-wrapper di project -> override juga */
+  .main-container, .content-wrapper {
+    flex-direction: column !important;
+  }
+}
+
+/* ===========================
+   RESPONSIVE POSTER AREA FINAL FIX
+   =========================== */
+
+/* Untuk layar tablet (<=1024px) */
+@media (max-width: 1024px) {
+  .poster-area {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 28px;
+  }
+
+  .poster-left, 
+  .poster-right {
+    max-width: 100%;
+  }
+}
+
+/* Untuk layar mobile (<=768px) */
+@media (max-width: 768px) {
+  /* Hapus layout dua kolom, jadi stack vertikal */
+  .poster-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+  }
+
+  /* Main poster di paling atas */
+  .poster-left {
+    order: 1;
+    width: 100%;
+    margin: 0;
+  }
+
+  /* Small poster di tengah setelah main poster */
+  .poster-right {
+    order: 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    width: 100%;
+    margin: 0;
+  }
+
+  /* Small poster cards ikuti grid, bukan flex */
+  .small-row {
+    display: contents;
+  }
+
+  .small-card {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+  }
+
+  /* Progress di bawah small poster */
+  .progress-card {
+    order: 3;
+    grid-column: 1 / -1;
+    margin-top: 10px;
+  }
+
+  /* Penyesuaian teks */
+  .event-title {
+    top: 15px;
+    left: 15px;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+  }
+}
+
+/* Extra small (<=640px) */
+@media (max-width: 640px) {
+  .slide { 
+    aspect-ratio: 3 / 4; 
+    min-height: 180px; 
+  }
+
+  .small-card { 
+    flex: 0 0 100px; 
+  }
+
+  .brand { 
+    font-size: 1.2rem; 
+  }
+}
+
+/* ===== FIX: Responsif untuk Right Insight ===== */
+/* Default desktop (tetap sejajar kanan) */
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+/* Mode mobile */
+@media (max-width: 768px) {
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Poster di atas */
+  .content-col {
+    order: 1;
+    width: 100%;
+  }
+
+  /* Insight di bawah poster */
+  .right-insight {
+    order: 2;
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    z-index: 1;
+    animation: fadeInUp 0.8s ease forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+      filter: blur(5px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content-col {
+    order: 1;
+    width: 100%;
+  }
+
+  .right-insight {
+    order: 2;
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+    z-index: 1;
+  }
+}
