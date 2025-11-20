@@ -1,0 +1,220 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Archive — Jenshou</title>
+   <link rel="stylesheet" href="css/archivebg.css" />
+    <link rel="stylesheet" href="css/archive-sheet/archive.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+ <header class="navbar glass">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <img src="assets/nav-icon/userv1.0.webp" alt="logo" class="nav-logo">
+<ul class="nav-menu">
+  <li><a href="index.html" class="nav-link"><i class="fa fa-home"></i><span>Dashboard</span></a></li>
+  <li><a href="gallery.html" class="nav-link"><i class="fa fa-image"></i><span>Gallery</span></a></li>
+  <li><a href="commission.html" class="nav-link"><i class="fa fa-pen-nib"></i><span>Commission</span></a></li>
+  <li><a href="about.html" class="nav-link"><i class="fa fa-user"></i><span>About</span></a></li>
+</ul>
+<!-- Hamburger button untuk mobile -->
+<button class="hamburger-btn" aria-label="Menu">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+</div>
+<div class="nav-right">
+  <div class="brand">Jenshou</div>
+</div>
+</div>
+</header>
+
+<!-- Sidebar mobile -->
+<div class="mobile-sidebar">
+<div class="sidebar-logo">
+  <img src="assets/nav-icon/userv1.0.webp" alt="logo">
+  <div class="user-info">
+    <h3 class="user-name">Jenshou</h3>
+    <div class="user-line"></div>
+    <p class="user-role">Art & Design Visionary</p>
+  </div>
+</div>
+
+  <ul class="sidebar-menu">
+      <li><a href="index.html"><i class="fa fa-home"></i>Dashboard</a></li>
+  <li><a href="gallery.html"><i class="fa fa-image"></i>Gallery</a></li>
+  <li><a href="commission.html"><i class="fa fa-pen-nib"></i>Commission</a></li>
+  <li><a href="about.html"><i class="fa fa-user"></i>About</a></li>
+    <li><a href="#"><i class="fas fa-archive"></i> Archive</a></li>
+   <!-- <li><a href="https://farrelanantaf.vercel.app/"><i class="fas fa-briefcase"></i> Portfolio</a></li> -->
+    <li class="has-submenu">
+      <a href="#" class="settings-link"><i class="fas fa-cog"></i> Settings <i class="fas fa-chevron-down submenu-toggle"></i></a>
+      <div class="submenu-container">
+        <!-- Container 1: Ganti Font -->
+        <div class="submenu-item">
+          <h4>Change Font</h4>
+          <select id="fontSelector">
+            <option value="Poppins">Poppins</option>
+            <option value="Roboto">Roboto</option>
+            <option value="Arial">Arial</option>
+            <option value="Verdana">Verdana</option>
+          </select>
+        </div>
+        <!-- Container 2: Ganti Background Gradient -->
+        <div class="submenu-item">
+          <h4>Change Background Gradient</h4>
+          <input type="color" id="bgGradientStart" title="Start Color">
+          <input type="color" id="bgGradientEnd" title="End Color">
+          <button id="applyGradient">Apply</button>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+<div class="sidebar-version">V 1.0</div>
+</div>
+<div class="sidebar-overlay"></div>
+
+<!-- Tombol Settings (Desktop Only) -->
+<button id="desktopSettingsBtn" class="desktop-settings-btn" aria-label="Open Settings">
+  <i class="fas fa-cog"></i>
+</button>
+
+<!-- Panel Settings Desktop -->
+<div id="desktopSettingsPanel" class="desktop-settings-panel">
+  <h3>Settings</h3>
+
+  <!-- Ganti Font -->
+  <div class="settings-group">
+    <label for="fontSelectorDesktop">Font:</label>
+    <select id="fontSelectorDesktop">
+      <option value="Poppins">Poppins</option>
+      <option value="Roboto">Roboto</option>
+      <option value="Arial">Arial</option>
+      <option value="Verdana">Verdana</option>
+    </select>
+  </div>
+
+  <!-- Ganti Background -->
+  <div class="settings-group">
+    <label>Background Gradient:</label>
+    <div class="color-row">
+      <input type="color" id="bgGradientStartDesktop" title="Start Color">
+      <input type="color" id="bgGradientEndDesktop" title="End Color">
+      <button id="applyGradientDesktop">Apply</button>
+    </div>
+  </div>
+</div>
+
+<main class="archive-dashboard">
+
+  <!-- Header Section -->
+  <section class="archive-header fade-in">
+    <h1 class="archive-title">My Archive</h1>
+  </section>
+
+  <!-- 🔍 Search Bar -->
+  <div class="archive-search glass">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="text" id="archiveSearch" placeholder="Search files...">
+  </div>
+</section>
+
+  <!-- Quick Access -->
+<section class="quick-access fade-in delay-1">
+  <h2>Quick Access</h2>
+  <div class="quick-access-grid">
+
+    <div class="qa-card glass" data-filter="design">
+      <img src="assets/archive-page/newdesign.webp" class="design-img" />
+      <div class="qa-content">
+        <p class="qa-folder">Design Files</p>
+        <span class="qa-meta">Last modified: Nov 12, 2025</span>
+      </div>
+    </div>
+
+    <div class="qa-card glass" data-filter="art">
+      <img src="assets/archive-page/newart.webp"class="art-img" />
+      <div class="qa-content">
+        <p class="qa-folder">Art Files</p>
+        <span class="qa-meta">Last modified: Oct 28, 2025</span>
+      </div>
+    </div>
+
+    <div class="qa-card glass" data-filter="project">
+      <img src="assets/archive-page/newproject.png" class="project-img" />
+      <div class="qa-content">
+        <p class="qa-folder">Projects Files</p>
+        <span class="qa-meta">Last modified: Nov 15, 2025</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Files List -->
+<section class="files-section fade-in delay-2">
+  <h2 id="showAllBtn">
+    All Files
+    <i class="fa-solid fa-arrow-right arrow-icon"></i>
+  </h2>
+  <div class="archive-divider-mid"></div>
+  <!-- Archive grid kosong, item akan di-render lewat JS -->
+  <div class="archive-grid glass">
+    <!-- Files list akan muncul otomatis lewat JS -->
+  </div>
+</section>
+
+</main>
+
+<!-- ===========================
+     FOOTER SECTION
+     =========================== -->
+<footer class="gallery-footer glass">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h2 class="footer-logo">Jenshou<span>.</span></h2>
+      <p class="footer-desc">Exploring beyond the void — a creative journey through design, art, and imagination.</p>
+    </div>
+
+    <div class="footer-links">
+      <div class="footer-column">
+        <h3>Explore</h3>
+        <a href="index.html">Dashboard</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="commission.html">Commission</a>
+        <a href="about.html">About</a>
+        <a href="archive.html">Archive</a>
+      </div>
+
+      <div class="footer-column">
+        <h3>Connect</h3>
+        <a href="#">Instagram</a>
+        <a href="#">Pinterest</a>
+        <a href="#">Tiktok</a>
+        <a href="#">Twitter</a>
+        <a href="#">Facebook</a>
+      </div>
+
+      <div class="footer-column">
+        <h3>Resources</h3>
+        <a href="#">GitHub</a>
+        <a href="#">Inspiration</a>
+        <a href="#">License</a>
+        <a href="#">Support</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; <span id="year"></span> Jenshou. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="js/archive-func/archive.js"></script>
+</body>
+</html>

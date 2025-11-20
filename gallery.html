@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gallery — Jenshou</title>
+    <link rel="stylesheet" href="css/gallerybg.css" />
+  <link rel="stylesheet" href="css/gallery-sheet/gallery.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div id="toastNotif" class="toast-hidden">Link belum tersedia untuk desain ini.</div>
+    <header class="navbar glass">
+     <div class="nav-inner">
+       <div class="nav-left">
+         <img src="assets/nav-icon/userv1.0.webp" alt="logo" class="nav-logo">
+   <ul class="nav-menu">
+     <li><a href="index.html" class="nav-link"><i class="fa fa-home"></i><span>Dashboard</span></a></li>
+     <li><a href="gallery.html" class="nav-link active"><i class="fa fa-image"></i><span>Gallery</span></a></li>
+     <li><a href="commission.html" class="nav-link"><i class="fa fa-pen-nib"></i><span>Commission</span></a></li>
+     <li><a href="about.html" class="nav-link"><i class="fa fa-user"></i><span>About</span></a></li>
+   </ul>
+   <!-- Hamburger button untuk mobile -->
+   <button class="hamburger-btn" aria-label="Menu">
+     <span></span>
+     <span></span>
+     <span></span>
+   </button>
+   </div>
+   <div class="nav-right">
+     <div class="brand">Jenshou</div>
+   </div>
+   </div>
+   </header>
+   
+   <!-- Sidebar mobile -->
+   <div class="mobile-sidebar">
+<div class="sidebar-logo">
+  <img src="assets/nav-icon/userv1.0.webp" alt="logo">
+
+  <div class="user-info">
+    <h3 class="user-name">Jenshou</h3>
+    <div class="user-line"></div>
+    <p class="user-role">Art & Design Visionary</p>
+  </div>
+</div>
+   
+  <ul class="sidebar-menu">
+      <li><a href="index.html"><i class="fa fa-home"></i>Dashboard</a></li>
+  <li><a href="#"><i class="fa fa-image active"></i>Gallery</a></li>
+  <li><a href="commission.html"><i class="fa fa-pen-nib"></i>Commission</a></li>
+  <li><a href="about.html"><i class="fa fa-user"></i>About</a></li>
+    <li><a href="archive.html"><i class="fas fa-archive"></i> Archive</a></li>
+   <!--<li><a href="https://farrelanantaf.vercel.app/"><i class="fas fa-briefcase"></i> Portfolio</a></li>-->
+    <li class="has-submenu">
+      <a href="#" class="settings-link"><i class="fas fa-cog"></i> Settings <i class="fas fa-chevron-down submenu-toggle"></i></a>
+         <div class="submenu-container">
+           <!-- Container 1: Ganti Font -->
+           <div class="submenu-item">
+             <h4>Change Font</h4>
+             <select id="fontSelector">
+               <option value="Poppins">Poppins</option>
+               <option value="Roboto">Roboto</option>
+               <option value="Arial">Arial</option>
+               <option value="Verdana">Verdana</option>
+             </select>
+           </div>
+           <!-- Container 2: Ganti Background Gradient -->
+           <div class="submenu-item">
+             <h4>Change Background Gradient</h4>
+             <input type="color" id="bgGradientStart" title="Start Color">
+             <input type="color" id="bgGradientEnd" title="End Color">
+             <button id="applyGradient">Apply</button>
+           </div>
+         </div>
+       </li>
+     </ul>
+   
+<div class="sidebar-version">V 1.0</div>
+   </div>
+   <div class="sidebar-overlay"></div>
+   
+   <!-- Tombol Settings (Desktop Only) -->
+   <button id="desktopSettingsBtn" class="desktop-settings-btn" aria-label="Open Settings">
+     <i class="fas fa-cog"></i>
+   </button>
+   
+   <!-- Panel Settings Desktop -->
+   <div id="desktopSettingsPanel" class="desktop-settings-panel">
+     <h3>Settings</h3>
+   
+     <!-- Ganti Font -->
+     <div class="settings-group">
+       <label for="fontSelectorDesktop">Font:</label>
+       <select id="fontSelectorDesktop">
+         <option value="Poppins">Poppins</option>
+         <option value="Roboto">Roboto</option>
+         <option value="Arial">Arial</option>
+         <option value="Verdana">Verdana</option>
+       </select>
+     </div>
+   
+     <!-- Ganti Background -->
+     <div class="settings-group">
+       <label>Background Gradient:</label>
+       <div class="color-row">
+         <input type="color" id="bgGradientStartDesktop" title="Start Color">
+         <input type="color" id="bgGradientEndDesktop" title="End Color">
+         <button id="applyGradientDesktop">Apply</button>
+       </div>
+     </div>
+   </div>
+
+<!-- ===========================
+     GALLERY SECTION
+=========================== -->
+<main class="gallery-page">
+
+  <!-- ===== 1. HEADER / ABOVE THE FOLD ===== -->
+  <section class="gallery-hero">
+    <div class="gallery-hero-content">
+      <h1 class="gallery-title">Creative Works</h1>
+      <p class="gallery-subtitle">
+        A curated collection of my latest creative works.
+      </p>
+  </section>
+  
+  <section class="board-header">
+  <h2 class="board-header-title">Must Improve Design</h2>
+  <div class="board-header-underline"></div>
+</section>
+  
+<section class="gallery-board">
+  <div class="board-slider">
+    <!-- Board 1 -->
+    <div class="board-item active">
+      <img src="assets/gallery-page/board1.webp" loading="lazy" alt="Epic Panorama">
+      <div class="board-overlay">
+        <div class="board-info">
+          <h3 class="board-title">Abstract-Interspace</h3>
+          <p class="board-subtitle">Promotion Game Series — 06/11/2025</p>
+        </div>
+        <div class="board-containers">
+          <div class="info-box">
+            <h4>Software</h4>
+            <p>Ibis Paint x,Alight Motion</p>
+          </div>
+          <div class="info-box">
+            <h4>Resources</h4>
+            <p>Pinterest(generated AI)</p>
+          </div>
+          <div class="info-box">
+            <h4>Timeline</h4>
+            <p>3+ Hours</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Board 2 -->
+    <div class="board-item">
+      <img src="assets/gallery-page/board2.webp" loading="lazy" alt="Sunset Glory">
+      <div class="board-overlay">
+        <div class="board-info">
+          <h3 class="board-title">Abstract - Sci-Fi</h3>
+          <p class="board-subtitle">Abstract Design Series — 01/11/2025</p>
+        </div>
+        <div class="board-containers">
+          <div class="info-box">
+            <h4>Software</h4>
+            <p>Ibis Paint x</p>
+          </div>
+          <div class="info-box">
+            <h4>Resources</h4>
+            <p>Pinterest</p>
+          </div>
+          <div class="info-box">
+            <h4>Timeline</h4>
+            <p>3+ Hours</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Board 3 -->
+    <div class="board-item">
+      <img src="assets/gallery-page/board3.webp" loading="lazy" alt="Mystic Forest">
+      <div class="board-overlay">
+        <div class="board-info">
+          <h3 class="board-title">Art Style - Candy</h3>
+          <p class="board-subtitle">Nandoroid Cover Box 3D — 02/11/2025</p>
+        </div>
+        <div class="board-containers">
+          <div class="info-box">
+            <h4>Software</h4>
+            <p>Ibis Paint x</p>
+          </div>
+          <div class="info-box">
+            <h4>Resources</h4>
+            <p>Bang! Dream wiki fandom</p>
+          </div>
+          <div class="info-box">
+            <h4>Timeline</h4>
+            <p>5+ Hours</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <button class="board-prev">&#10094;</button>
+  <button class="board-next">&#10095;</button>
+</section>
+
+<!-- ===== MOOD COLOR PALETTE ===== -->
+<section class="mood-palette-container">
+  <div class="mood-palette-header">
+    <h3 class="palette-title">Mood Color Palette</h3>
+    <div class="palette-gradient-line"></div>
+  </div>
+  <div class="palette-boxes">
+    <div class="palette-box"></div>
+    <div class="palette-box"></div>
+    <div class="palette-box"></div>
+    <div class="palette-box"></div>
+    <div class="palette-box"></div>
+  </div>
+</section>
+
+<section class="other-design-header">
+  <h2 class="other-design-title">Other Designs</h2>
+  <div class="other-design-underline"></div>
+</section>
+
+  <!-- ===== 2. FILTER & CATEGORY BAR ===== -->
+  <section class="gallery-filter">
+    <div class="filter-container">
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="gfx">GFX</button>
+        <button class="filter-btn" data-filter="manipulation">Manipulation</button>
+        <button class="filter-btn" data-filter="artstyle">Art Style</button>
+        <button class="filter-btn" data-filter="100">100 Designs</button>
+        <button class="filter-btn" data-filter="events">Events</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3. MAIN SHOWCASE (GRID / MASONRY) ===== -->
+  <section id="showcase" class="gallery-showcase">
+  <div class="gallery-grid" id="galleryGrid">
+    <!-- item akan dibuat otomatis lewat JS -->
+  </div>
+</section>
+
+<!-- ============================
+     BANNER DESIGNS SECTION
+     ============================ -->
+<section id="bannerDesigns" class="banner-designs-section">
+
+  <!-- SECTION TITLE -->
+  <div class="banner-designs-header">
+    <h2 class="banner-title">Banner Designs</h2>
+
+    <!-- GRADIENT LINE -->
+    <div class="banner-title-line"></div>
+  </div>
+
+  <!-- BANNER GRID -->
+  <div class="banner-grid" id="bannerGrid">
+    <!-- item akan digenerate otomatis lewat JS -->
+  </div>
+
+</section>
+
+  <!-- ===== 5. END NOTE / OUTRO ===== -->
+  <section class="gallery-outro">
+    <p class="outro-text">
+     Thank you for exploring my world of design. Let’s create something meaningful together.
+    </p>
+    <a href="archive.html" class="outro-cta-btn">See Archive</a>
+  </section>
+
+</main>
+
+<!-- ===========================
+     FOOTER SECTION
+     =========================== -->
+<footer class="gallery-footer glass">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h2 class="footer-logo">Jenshou<span>.</span></h2>
+      <p class="footer-desc">Exploring beyond the void — a creative journey through design, art, and imagination.</p>
+    </div>
+
+    <div class="footer-links">
+      <div class="footer-column">
+        <h3>Explore</h3>
+        <a href="index.html">Dashboard</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="commission.html">Commission</a>
+        <a href="about.html">About</a>
+        <a href="archive.html">Archive</a>
+      </div>
+
+      <div class="footer-column">
+        <h3>Connect</h3>
+        <a href="https://www.instagram.com/jenshouuu?igsh=bTIzZ2gwcHdiMTU3">Instagram</a>
+        <a href="https://pin.it/727HZG1hc">Pinterest</a>
+        <a href="https://www.tiktok.com/@jenshouuu?_r=1&_t=ZS-91MTE3qFzF9">Tiktok</a>
+        <a href="https://x.com/yoshuoshiki?t=BEpmCQSHfDzMSkrD8l1uBA&s=09">Twitter</a>
+        <a href="https://www.facebook.com/share/1H8gH4Yf3G/">Facebook</a>
+      </div>
+
+      <div class="footer-column">
+        <h3>Resources</h3>
+        <a href="https://github.com/jenshougrphic123">GitHub</a>
+        <a href="https://drive.google.com/drive/folders/1v4mo88NC4uD2qOIkI8ntZ60Mj9FEqw6G">Assets</a>
+        <a href="license.html">License</a>
+        <a href="support.html">Support</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; <span id="year"></span> Jenshou. All rights reserved.</p>
+  </div>
+</footer>
+
+  <script src="js/gallery-func/gallery.js"></script>
+  <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.js"></script>
+</body>
+</html>
