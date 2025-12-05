@@ -1,74 +1,80 @@
 /* ===========================
    RESET & BASE
    =========================== */
-   * { box-sizing: border-box; }
+   * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  width: 100%;
-  overflow-x: hidden;
-  background: transparent;
-  scroll-behavior: smooth;
+   html, body {
+     height: 100vh;
+     width: 100%;
+     overflow-x: hidden;
+     overflow-y: auto;
+     background: transparent;
+     scroll-behavior: smooth;
+   }
+   
+   body::before {
+     content: "";
+     position: fixed;
+     inset: 0;
+     z-index: -1;
+     background-image:
+       url("assets/bg.jpg"),
+       linear-gradient(
+         to bottom right,
+         rgba(255, 255, 255, 0),
+         rgba(100, 150, 255, 0.6),
+         rgba(164, 109, 233, 0.6)
+       );
+     background-position: center;
+     background-size: cover;
+   }
+   
+   /* grid background di luar, jangan di dalam body::before */
+   body::after {
+     content: "";
+     position: fixed;
+     inset: 0;
+     z-index: -1;
+     background-image:
+       linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+       linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+     background-size: 100%;
+     pointer-events: none;
+   }
+   
+   /* Responsif: ukuran grid berubah di layar kecil */
+   @media (max-width: 768px) {
+     body::after {
+       background-size: 25px 25px; /* kotak grid lebih kecil untuk mobile */
+     }
+   }
+   
+   @media (min-width: 769px) {
+     body::after {
+       background-size: 100%; /* default untuk tablet/desktop */
+     background-position: center;
+     background-size: cover; /* Biar menyesuaikan ukuran layar */
+   }
 }
-
-/* BACKGROUND UTAMA */
-body::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background-image:
-    url("assets/bg.jpg"),
-    linear-gradient(
-      to bottom right,
-      rgba(255, 255, 255, 0),
-      rgba(100, 150, 255, 0.6),
-      rgba(164, 109, 233, 0.6)
-    );
-  background-position: center;
-  background-size: cover;
-  background-size: 100% 300%;
-  background-size: 100% 400%;
-}
-
-/* GRID OVERLAY */
-body::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-  body::before {
-    background-position: top center;
-  }
-
-  body::after {
-    background-size: 25px 25px;
-  }
-}
-
-/* DESKTOP */
-@media (min-width: 769px) {
-  body::before {
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-  }
-
-  body::after {
-    background-position: center;
-    background-size: cover;
-  }
-}
+   
+   
+   /* 📱 Responsif untuk mobile (layar kecil) */
+   @media (max-width: 768px) {
+     body::before {
+       background-size: contain; /* biar gambar gak kepotong di mobile */
+       background-position: top center; /* posisi disesuaikan */
+       background-attachment: scroll; /* fixed kadang bikin bug di mobile */
+     }
+   }
+   
+   /* 💻 Responsif untuk tablet/desktop */
+   @media (min-width: 769px) {
+     body::before {
+       background-size: cover;
+       background-position: center;
+       background-attachment: fixed;
+     }
+   }
    
    /* ===========================
       GLASS EFFECT

@@ -52,33 +52,6 @@
 })();
 
 // ======================
-// SOFT PARTICLE GENERATOR
-// ======================
-(() => {
-  const particleContainer = document.querySelector('.particle-container');
-  if (!particleContainer) return;
-
-  function createParticle() {
-    const particle = document.createElement('div');
-    particle.classList.add('particle');
-
-    const size = Math.random() * 6 + 4;
-    particle.style.width = `${size}px`;
-    particle.style.height = `${size}px`;
-    particle.style.left = `${Math.random() * 100}%`;
-
-    const duration = Math.random() * 4 + 6;
-    particle.style.animationDuration = `${duration}s`;
-
-    particleContainer.appendChild(particle);
-    setTimeout(() => particle.remove(), duration * 1000);
-  }
-
-  const particleInterval = window.innerWidth < 768 ? 400 : 200;
-  setInterval(createParticle, particleInterval);
-})();
-
-// ======================
 // MAIN CAROUSEL (FIXED VERSION)
 // ======================
 (() => {
@@ -91,7 +64,7 @@
   let currentIndex = 0;
   let slideInterval = null;
   const intervalTime = 4000; // 4 detik
-  let isHovered = false;
+  let hoverTimeout;
 
   // Fungsi geser slide
   function goToSlide(index) {
@@ -136,17 +109,23 @@
     });
   });
 
-  // Hover pause
-  if (carousel) {
-    carousel.addEventListener('mouseenter', () => {
-      isHovered = true;
-      stopAutoSlide();
-    });
-    carousel.addEventListener('mouseleave', () => {
-      isHovered = false;
-      startAutoSlide();
-    });
-  }
+carousel.addEventListener('mouseenter', () => {
+isHovered = true;
+stopAutoSlide();
+// Clear timeout jika ada
+if (hoverTimeout) {
+clearTimeout(hoverTimeout);
+hoverTimeout = null;
+}
+});
+
+carousel.addEventListener('mouseleave', () => {
+isHovered = false;
+// Set timeout untuk mulai lagi setelah 3 detik
+hoverTimeout = setTimeout(() => {
+startAutoSlide();
+}, 3000);
+});
 
   // Responsif resize
   window.addEventListener('resize', () => {
@@ -177,11 +156,12 @@
 (() => {
   const progressBar = document.getElementById('progressBar');
   const progressPercent = document.getElementById('progressPercent');
+  progressBar.classList.add('animate');
   if (!progressBar || !progressPercent) return;
 
   let progress = 0;
   function animateProgress() {
-    if (progress < 14) {
+    if (progress < 15) {
       progress++;
       progressBar.style.width = `${progress}%`;
       progressPercent.textContent = `${progress}%`;

@@ -782,7 +782,7 @@ const galleryItems = [
   {
     title: "Wiš'adel — Arknights",
     subtitle: "Part of Collaboration on Ig",
-    image: "assets/gallery-page/gfx-events-wisadel.png",
+    image: "assets/gallery-page/gfx-events-wisadel.webp",
     categories: ["gfx", "events"],
     pinterest: "https://pin.it/4zdNexfOh",
     instagram: "https://www.instagram.com/p/DQ-Lt-_k24E/?img_index=1&igsh=OTdkZWJtaTU0aHRx",
@@ -800,7 +800,7 @@ const galleryItems = [
   {
     title: "Alice — Zenless Zone Zero",
     subtitle: "Part of Collaboration on Ig",
-    image: "assets/gallery-page/gfx-alice.png",
+    image: "assets/gallery-page/gfx-alice.webp",
     categories: ["gfx", "events"],
     pinterest: "https://pin.it/1Vfuf4zcV",
     instagram: "https://www.instagram.com/p/DQnQeY6ksUA/?igsh=Z29hdHQydnZrcXlp",
@@ -809,7 +809,7 @@ const galleryItems = [
   {
     title: "Yuzuha — Zenless Zone Zero",
     subtitle: "Part of Collaboration on Ig",
-    image: "assets/gallery-page/gfx-yuzuha.png",
+    image: "assets/gallery-page/gfx-yuzuha.webp",
     categories: ["gfx", "events"],
     pinterest: "https://pin.it/26FAEgZdX",
     instagram: "https://www.instagram.com/p/DQjUs-PkpVd/?igsh=MjhzeTU2aHRrc2Jn",
@@ -818,7 +818,7 @@ const galleryItems = [
   {
     title: "Exusiai the New Covenant — Arknights",
     subtitle: "First Collaboration on Ig",
-    image: "assets/gallery-page/gfx-exusiai-the-new-covenant.png",
+    image: "assets/gallery-page/gfx-exusiai-the-new-covenant.webp",
     categories: ["gfx", "events"],
     pinterest: "https://pin.it/2HHCHPAL3",
     instagram: "https://www.instagram.com/p/DQRD9KYkcLp/?igsh=MTZwcTV6YTd0NzBldQ==",
@@ -851,11 +851,29 @@ const galleryItems = [
     instagram: "https://www.instagram.com/p/DN5lkZ9CfEn/?igsh=MWFva3VvZ2V2cmF3OA==",
     date: "2025-08-28"
   },
+  {
+    title: "Chisa — Wuthering Waves",
+    subtitle: "Masking & coloring design part 15, stylist the font",
+    image: "assets/gallery-page/gfx-100design(15)-chisa.webp",
+    categories: ["gfx","100"],
+    pinterest: "https://id.pinterest.com/pin/1023724559058736678/",
+    instagram: "https://www.instagram.com/jenshouuu/p/DRhV5fdCePP/",
+    date: "2025-11-26"
+  },
+  {
+    title: "Lynae — Wuthering Waves",
+    subtitle: "first design on photoshop",
+    image: "assets/gallery-page/gfx-lynae.webp",
+    categories: ["gfx","100"],
+    pinterest: "",
+    instagram: "https://www.instagram.com/jenshouuu/p/DRzyuTlkrLL/",
+    date: "2025-12-04"
+  },
   // ===== ARTSTYLE ===== //
   {
     title: "Yanami Anna — Too Many Losing Heroines!",
     subtitle: "Events on @enpisicommunity | Host:nabeeajaa",
-    image: "assets/gallery-page/artstyle-events-yanamianna.png",
+    image: "assets/gallery-page/artstyle-events-yanamianna.webp",
     categories: ["artstyle","events"],
     pinterest: "https://pin.it/2sI5FIFl5",
     instagram: "",
@@ -864,7 +882,7 @@ const galleryItems = [
   {
     title: "Maruyama Aya — Bang! Dream",
     subtitle: "Figure 3D box cover",
-    image: "assets/gallery-page/artstyle-coverbox3d.png",
+    image: "assets/gallery-page/artstyle-coverbox3d.webp",
     categories: ["artstyle"],
     pinterest: "https://pin.it/2sI5FIFl5",
     instagram: "https://www.instagram.com/p/DQlH77ZCc1B/?igsh=MWYycW1rNnU4N3BrMA==",
@@ -873,7 +891,7 @@ const galleryItems = [
   {
     title: "Lucia Crimson — Punishing Gray Raven",
     subtitle: "Fractal abstract Sci-Fi vibes",
-    image: "assets/gallery-page/artstyle-scifi.png",
+    image: "assets/gallery-page/artstyle-scifi.webp",
     categories: ["artstyle"],
     pinterest: "https://pin.it/6mbKSlDT3",
     instagram: "https://www.instagram.com/p/DQhA9GbidxZ/?igsh=bHFzcHZxODgyYXFt",
@@ -882,7 +900,7 @@ const galleryItems = [
   {
     title: "Rin Shima — Yuru Camp",
     subtitle: "Event on @enpisicommunity | host:@n4yoka",
-    image: "assets/gallery-page/artstyle-event-enpisi-rinshima.png",
+    image: "assets/gallery-page/artstyle-event-enpisi-rinshima.webp",
     categories: ["artstyle","events"],
     pinterest: "",
     instagram: "https://www.instagram.com/p/DQikJqvEsUR/?igsh=a2YzcXFqNzFoeDgw",
@@ -900,7 +918,7 @@ const galleryItems = [
   {
     title: "Evernight — Honkai: Star Rail",
     subtitle: "Masking & coloring design part 11",
-    image: "assets/gallery-page/artstyle-100design(11)-evernight.jpg",
+    image: "assets/gallery-page/artstyle-100design(11)-evernight.webp",
     categories: ["artstyle","100"],
     pinterest: "https://pin.it/4AEzZw6Ur",
     instagram: "https://www.instagram.com/p/DPSf7SekhNz/?igsh=MTNwOTZ3YTFhdmthOQ==",
@@ -1017,7 +1035,7 @@ const galleryItems = [
   {
     title: "Artstyle — My first art",
     subtitle: "Drawing & designed in the same time",
-    image: "assets/gallery-page/artstyle-ilustration.png",
+    image: "assets/gallery-page/artstyle-ilustration.webp",
     categories: ["artstyle"],
     pinterest: "https://pin.it/5miPqCNu2",
     instagram: "https://www.instagram.com/p/DQXI7yAkhRt/?igsh=aWtoZHdoNGk0dXFo",
@@ -1026,7 +1044,7 @@ const galleryItems = [
   {
     title: "Cerydra — Honkai: Star Rail",
     subtitle: "Making sharpen highlight",
-    image: "assets/gallery-page/artstyle-cerydra.png",
+    image: "assets/gallery-page/artstyle-cerydra.webp",
     categories: ["artstyle"],
     pinterest: "https://pin.it/44z43HREi",
     instagram: "https://www.instagram.com/p/DNIEgcPxM1D/?igsh=dzB0bnZ5bTY1MThk",
@@ -1050,11 +1068,20 @@ const galleryItems = [
     instagram: "https://www.instagram.com/anonzxth__/p/DRZqG8UElg6/",
     date: "2025-11-23"
   },
+  {
+    title: "Silverash the Reignfrost — Arknights",
+    subtitle: "Increase a contras as freezed",
+    image: "assets/gallery-page/silverash-reigfrost-artstyle.webp",
+    categories: ["artstyle"],
+    pinterest: "https://id.pinterest.com/pin/1023724559058856287/",
+    instagram: "https://www.instagram.com/jenshouuu/p/DRr6MlTifgL/",
+    date: "2025-12-01"
+  },
   //===== MANIPULATION =====//
   {
     title: "Dan Heng Permansor Terrae — Honkai: Star Rail",
     subtitle: "Masking & coloring design part 14 | Shading & lighting advance guide",
-    image: "assets/gallery-page/manipulation-100design(14)-danheng3.png",
+    image: "assets/gallery-page/manipulation-100design(14)-danheng3.webp",
     categories: ["manipulation","100"],
     pinterest: "",
     instagram: "https://www.instagram.com/p/DQeQl2ICakV/?igsh=MWhud2Y3dGE1eTRsNA==",
@@ -1063,7 +1090,7 @@ const galleryItems = [
   {
     title: "Dan Heng Imbibitor Lunae — Honkai: Star Rail",
     subtitle: "Masking & coloring design part 14 | Shading & lighting advance guide",
-    image: "assets/gallery-page/manipulation-100design(14)-danheng2.png",
+    image: "assets/gallery-page/manipulation-100design(14)-danheng2.webp",
     categories: ["manipulation","100"],
     pinterest: "",
     instagram: "https://www.instagram.com/p/DQeQl2ICakV/?igsh=MWhud2Y3dGE1eTRsNA==",
@@ -1072,7 +1099,7 @@ const galleryItems = [
   {
     title: "Dan Heng — Honkai: Star Rail",
     subtitle: "Masking & coloring design part 14 | Shading & lighting advance guide",
-    image: "assets/gallery-page/manipulation-100design(14)-danheng1.png",
+    image: "assets/gallery-page/manipulation-100design(14)-danheng1.webp",
     categories: ["manipulation","100"],
     pinterest: "",
     instagram: "https://www.instagram.com/p/DQeQl2ICakV/?igsh=MWhud2Y3dGE1eTRsNA==",
@@ -1081,7 +1108,7 @@ const galleryItems = [
   {
     title: "Sentinel — Reverse: 1999",
     subtitle: "Masking & coloring design part 13 | Masking & used elements",
-    image: "assets/gallery-page/manipulation-100design(13)-sentinel.png",
+    image: "assets/gallery-page/manipulation-100design(13)-sentinel.webp",
     categories: ["manipulation","100"],
     pinterest: "https://pin.it/2K6gRgWir",
     instagram: "https://www.instagram.com/p/DP_DslYkcn2/?igsh=d2EzNmRhc2Y2Yjd1",
@@ -1204,7 +1231,7 @@ renderGallery(galleryItems);
 // ============================
 const bannerData = [
   {
-    img: "assets/gallery-page/board1.png",
+    img: "assets/gallery-page/board1.webp",
     title: "Beyond the Void — Interspace Sci-Fi",
     desc: "Fake loading screen",
     pinterest: "https://pin.it/1LoGd5lxR",
@@ -1213,7 +1240,7 @@ const bannerData = [
     date: "2025-11-06"
   },
   {
-    img: "assets/gallery-page/banner-artstyle-events-qiuyuan.png",
+    img: "assets/gallery-page/banner-artstyle-events-qiuyuan.webp",
     title: "Qiuyuan — Wuthering Waves",
     desc: "Part of Collaboration on Ig",
     pinterest: "https://pin.it/5Frx7ERhz",

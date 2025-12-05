@@ -1,23 +1,4 @@
 /* ===========================
-   GLASS EFFECT
-   =========================== */
-/* ==== GLASS EFFECT (tetap dari aslinya) ==== */
-.glass, .glass-sub {
-  backdrop-filter: blur(40px) saturate(180%);
-  background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.06));
-  border: 1px solid rgba(255,255,255,0.28);
-  border-radius: 16px;
-  box-shadow: 0 8px 30px rgba(6,6,6,0.15);
-}
-
-.glass:hover {
-  box-shadow: 0 8px 40px rgba(255,255,255,0.15);
-  transform: translateY(-3px);
-  transition: 0.3s ease;
-}
-
-
-/* ===========================
    GALLERY PAGE - FINAL VERSION
    =========================== */
 
