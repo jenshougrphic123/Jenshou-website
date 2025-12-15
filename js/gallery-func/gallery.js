@@ -869,6 +869,51 @@ const galleryItems = [
     instagram: "https://www.instagram.com/jenshouuu/p/DRzyuTlkrLL/",
     date: "2025-12-04"
   },
+  {
+    title: "Closure — Arknights",
+    subtitle: "Part of collaboration community",
+    image: "assets/gallery-page/gfx-closure2.webp",
+    categories: ["gfx","events"],
+    pinterest: "https://id.pinterest.com/pin/1023724559059482007/",
+    instagram: "",
+    date: "2025-12-10"
+  },
+  {
+    title: "Watanabe epitaph I — Punishing: Gray Raven",
+    subtitle: "Try to improve a new style",
+    image: "assets/gallery-page/gfx-watanabe_epitaph1.jpg",
+    categories: ["gfx"],
+    pinterest: "https://id.pinterest.com/pin/1023724559059409875/",
+    instagram: "https://www.instagram.com/jenshouuu/p/DSMO7SMETTL/",
+    date: "2025-12-13"
+  },
+  {
+    title: "Watanabe epitaph II — Punishing: Gray Raven",
+    subtitle: "Try to improve a new style",
+    image: "assets/gallery-page/gfx-watanabe_epitaph2.jpg",
+    categories: ["gfx"],
+    pinterest: "https://id.pinterest.com/pin/1023724559059409904/",
+    instagram: "https://www.instagram.com/jenshouuu/p/DSMO7SMETTL/",
+    date: "2025-12-13"
+  },
+  {
+    title: "Lucia: Crimson Weave I — Punishing: Gray Raven",
+    subtitle: "Another design with label style",
+    image: "assets/gallery-page/gfx-lucia_crimson1.jpg",
+    categories: ["gfx"],
+    pinterest: "https://id.pinterest.com/pin/1023724559059451085/",
+    instagram: "https://www.instagram.com/jenshouuu/p/DSPbSz8CSiR/",
+    date: "2025-12-14"
+  },
+  {
+    title: "Lucia: Crimson Weave II — Punishing: Gray Raven",
+    subtitle: "Another design with label style",
+    image: "assets/gallery-page/gfx-lucia_crimson2.jpg",
+    categories: ["gfx"],
+    pinterest: "https://id.pinterest.com/pin/1023724559059451098/",
+    instagram: "https://www.instagram.com/jenshouuu/p/DSPbSz8CSiR/",
+    date: "2025-12-14"
+  },
   // ===== ARTSTYLE ===== //
   {
     title: "Yanami Anna — Too Many Losing Heroines!",
@@ -1077,6 +1122,24 @@ const galleryItems = [
     instagram: "https://www.instagram.com/jenshouuu/p/DRr6MlTifgL/",
     date: "2025-12-01"
   },
+  {
+    title: "Closure — Arknights",
+    subtitle: "Lights mode of my design style",
+    image: "assets/gallery-page/artstyle-closure1.jpg",
+    categories: ["artstyle"],
+    pinterest: "https://id.pinterest.com/pin/1023724559059392121/",
+    instagram: "https://www.instagram.com/jenshouuu/p/DSLvEHyEoYt/",
+    date: "2025-12-12"
+  },
+  {
+    title: "Perlica — Arknights: Endfield",
+    subtitle: "time to improve my design with new software",
+    image: "assets/gallery-page/artstyle-perlica.jpg",
+    categories: ["artstyle"],
+    pinterest: "https://id.pinterest.com/pin/1023724559059392121/",
+    instagram: "https://www.instagram.com/jenshouuu/p/DSLvEHyEoYt/",
+    date: "2025-12-12"
+  },
   //===== MANIPULATION =====//
   {
     title: "Dan Heng Permansor Terrae — Honkai: Star Rail",
@@ -1144,7 +1207,7 @@ const galleryItems = [
   {
     title: "Qiuyuan — Wuthering Waves",
     subtitle: "Masking & coloring design part 04 | Lighting & highlight standard guide",
-    image: "assets/gallery-page/manipulation-100design(4)-qiuyuan.jpg",
+    image: "assets/gallery-page/manipulation-100design(4)-qiuyuan.webp",
     categories: ["manipulation","100"],
     pinterest: "https://pin.it/6kPn3yMk4",
     instagram: "https://www.instagram.com/p/DOSV-OfEcMc/?igsh=d2E0M3pvYjFvNnNl",
