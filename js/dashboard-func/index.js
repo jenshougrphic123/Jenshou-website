@@ -161,7 +161,7 @@ startAutoSlide();
 
   let progress = 0;
   function animateProgress() {
-    if (progress < 15) {
+    if (progress < 16) {
       progress++;
       progressBar.style.width = `${progress}%`;
       progressPercent.textContent = `${progress}%`;

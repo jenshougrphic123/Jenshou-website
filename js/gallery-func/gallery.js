@@ -914,6 +914,15 @@ const galleryItems = [
     instagram: "https://www.instagram.com/jenshouuu/p/DSPbSz8CSiR/",
     date: "2025-12-14"
   },
+  {
+    title: "Lesley — Mobile Legends",
+    subtitle: "Masking & coloring design part 16, perspective guide",
+    image: "assets/gallery-page/gfx-100design(16)-lesley.webp",
+    categories: ["gfx","100"],
+    pinterest: "https://id.pinterest.com/pin/1023724559059664590/",
+    instagram: "https://www.instagram.com/azleonidn/p/DSbzmciEclC/",
+    date: "2025-12-20"
+  },
   // ===== ARTSTYLE ===== //
   {
     title: "Yanami Anna — Too Many Losing Heroines!",
@@ -1230,6 +1239,16 @@ const galleryItems = [
     pinterest: "https://pin.it/5gSLEsSpr",
     instagram: "https://www.instagram.com/p/DOWFLgbiRPm/?igsh=MmwwOXpscGhxM2dl",
     date: "2025-09-08"
+  },
+  // ===== EXPERIMENT ===== //
+  {
+    title: "Taffy — ANANTA",
+    subtitle: "Experiment 001|Monochromatic design",
+    image: "assets/gallery-page/experiment-taffy_gameover.webp",
+    categories: ["experiment","100"],
+    pinterest: "https://id.pinterest.com/pin/1023724559059772982/",
+    instagram: "",
+    date: "2025-12-22"
   },
 ];
 
